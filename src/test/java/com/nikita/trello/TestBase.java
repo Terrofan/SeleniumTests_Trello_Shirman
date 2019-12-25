@@ -4,42 +4,67 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     WebDriver wd;
 
-    @BeforeClass
+    @BeforeMethod
     public void setUp() {
         wd = new ChromeDriver();
         wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         wd.get("https://trello.com/");
     }
 
-    public void clickLoginLink(String email, String password) throws InterruptedException {
-        click(By.cssSelector("[href='/login']"));
-        fillLoginForm(By.id("user"), email);
+    public void fillLoginFormAtlassian(String email, String password) throws InterruptedException {
+        type(By.id("user"), email);
         click(By.id("login"));
         click(By.id("login-submit"));
-        fillLoginForm(By.id("password"), password);
+        type(By.id("password"), password);
         click(By.id("login-submit"));
-
     }
 
-    public void fillLoginForm(By locator, String text) throws InterruptedException {
-        wd.findElement(locator).click();
-        wd.findElement(locator).clear();
-        wd.findElement(locator).sendKeys(text);
-        Thread.sleep(5000);
+    public void fillLoginFormOld(String email, String password) throws InterruptedException {
+        type(By.id("user"), email);
+        type(By.id("password"), password);
+        click(By.id("login"));
+    }
+
+    public void clickLoginLink() {
+        click(By.cssSelector("[href='/login']"));
     }
 
     public void click(By locator) {
         wd.findElement(locator).click();
     }
 
-    @AfterClass
+    public void type(By locator, String text) throws InterruptedException {
+        click(locator);
+        wd.findElement(locator).clear();
+        wd.findElement(locator).sendKeys(text);
+        Thread.sleep(5000);
+    }
+
+    public boolean isElementPresent(By locator){
+        return wd.findElements(locator).size() > 0;
+    }
+
+    public void pause(int millis) throws InterruptedException {
+        Thread.sleep(millis);
+    }
+
+    public boolean isAvatarPresentOnHeader(){
+        return isElementPresent(By.cssSelector("[data-test-id='header-member-menu-button']"));
+    }
+    public boolean test(){
+        return true;
+    }
+
+    @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(5000);
         wd.quit();
