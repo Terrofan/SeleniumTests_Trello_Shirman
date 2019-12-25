@@ -4,19 +4,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
+
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+
 
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     WebDriver wd;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         wd = new ChromeDriver();
-        wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         wd.get("https://trello.com/");
     }
 
@@ -49,7 +49,7 @@ public class TestBase {
         Thread.sleep(5000);
     }
 
-    public boolean isElementPresent(By locator){
+    public boolean isElementPresent(By locator) {
         return wd.findElements(locator).size() > 0;
     }
 
@@ -57,17 +57,23 @@ public class TestBase {
         Thread.sleep(millis);
     }
 
-    public boolean isAvatarPresentOnHeader(){
+    public boolean isAvatarPresentOnHeader() {
         return isElementPresent(By.cssSelector("[data-test-id='header-member-menu-button']"));
     }
-    public boolean test(){
+
+    public boolean test() {
         return true;
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() throws InterruptedException {
         Thread.sleep(5000);
         wd.quit();
 
+    }
+
+    public void logout() {
+        click(By.cssSelector("[data-test-id='header-member-menu-button']"));
+        click(By.cssSelector("[data-test-id='header-member-menu-logout']"));
     }
 }
