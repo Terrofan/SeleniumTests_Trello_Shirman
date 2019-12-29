@@ -17,28 +17,33 @@ public class BoardCreationTests extends TestBase {
 
     @Test
     public void createPrivateBoardTest() throws InterruptedException {
-        String name = "TestBoard3";
-        click(By.xpath("//span[@name='add']"));
-        click(By.xpath("//span[@name='board']/..//p"));
-        type(By.cssSelector("[data-test-id='create-board-title-input']"), name);
-        click(By.xpath("//button/span[@name='private']"));
-        click(By.xpath("//button/span/span[@name='private']"));
-        click(By.cssSelector("[data-test-id='create-board-submit-button']"));
+        String boardName = "QA22" + System.currentTimeMillis();
+        int before = getBoardsCount();
+        clickOnPlusButton();
+        selectCreateBoardFromDropDown();
+        fillBoardForm(boardName);
+        confirmCreation();
         pause(5000);
-        Assert.assertEquals(wd.findElement(By.xpath("//div/span[@dir='auto']")).getText(),name);
+        Assert.assertEquals(wd.findElement(By.xpath("//div/span[@dir='auto']")).getText(),boardName);
+        returnToHomePage();
+        int actualResult = getBoardsCount();
+        Assert.assertEquals(actualResult,before + 1);
     }
 
     @Test
     public void createPublicBoardTest() throws InterruptedException {
-        String name = "TestBoard4";
-        click(By.xpath("//span[@name='add']"));
-        click(By.xpath("//span[@name='board']/..//p"));
-        type(By.cssSelector("[data-test-id='create-board-title-input']"), name);
-        click(By.xpath("//button/span[@name='private']"));
-        click(By.xpath("//span[@name='public']"));
-        click(By.cssSelector("._3UeOvlU6B5KUnS._2MgouXHqRQDP_5._3ZPeWh5QQj47DA"));
-        click(By.cssSelector("[data-test-id='create-board-submit-button']"));
+        String boardName = "QA22" + System.currentTimeMillis();
+        int before = getBoardsCount();
+        clickOnPlusButton();
+        selectCreateBoardFromDropDown();
+        fillBoardForm(boardName);
+        selectPublicBoardType();
+        confirmCreation();
         pause(5000);
-        Assert.assertEquals(wd.findElement(By.xpath("//div/span[@dir='auto']")).getText(),name);
+        Assert.assertEquals(wd.findElement(By.xpath("//div/span[@dir='auto']")).getText(),boardName);
+        returnToHomePage();
+        int actualResult = getBoardsCount();
+        Assert.assertEquals(actualResult,before + 1);
     }
+
 }

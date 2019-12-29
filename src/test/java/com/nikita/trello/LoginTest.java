@@ -17,7 +17,7 @@ public class LoginTest extends TestBase {
         // Atlassian login
         clickLoginLink();
         fillLoginFormAtlassian("nikitashirman@gmail.com", "5457den5457");
-        pause(5000);
+        pause(7000);
         Assert.assertTrue(isAvatarPresentOnHeader());
         /*Locators to create new board
         1) "Добавить доску" button : [class="board-tile mod-add"]
@@ -27,7 +27,7 @@ public class LoginTest extends TestBase {
         */
     }
 
-    @Test
+    @Test(enabled = false)
     public void testLogInOld() throws InterruptedException {
         // Old login
         clickLoginLink();
