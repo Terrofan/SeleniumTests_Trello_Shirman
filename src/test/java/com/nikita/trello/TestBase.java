@@ -1,6 +1,7 @@
 package com.nikita.trello;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
@@ -8,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -102,5 +104,28 @@ public class TestBase {
     public void returnToHomePage() {
         click(By.name("house"));
         click(By.name("house"));
+    }
+
+    public List<WebElement> getBoardsList() { //returns list of all existing boards
+        List<WebElement> boardsList = wd.findElements(By.xpath("//*[@class='icon-lg icon-member']/../../..//li"));
+        return boardsList;
+    }
+
+    public void deleteBoard() throws InterruptedException {
+        String title = getBoardsList().get(0).getText(); // returns a title of first board from all existing boards
+        click(By.xpath("//div[@title='" + title + "']")); // selects this(first) board by title
+        if (wd.findElements(By.cssSelector(".board-header-btn-icon.icon-sm.icon-public")).size() != 0) { // checks if a current board is public
+            click(By.cssSelector(".board-header-btn-icon.icon-sm.icon-public")); // switching the type
+            click(By.cssSelector(".icon-sm.vis-icon.icon-private")); //             of the current board to private
+            wd.navigate().refresh();
+            pause(3000);
+        }
+        click(By.cssSelector(".js-open-more"));
+        click(By.cssSelector(".js-close-board"));
+        click(By.cssSelector(".js-confirm.full.negate"));
+        pause(2000);
+        click(By.cssSelector(".quiet.js-delete"));
+        click(By.cssSelector("[type='submit']"));
+        pause(2000);
     }
 }

@@ -5,6 +5,7 @@
         <classes>
             <class name="com.nikita.trello.LoginTest" />
             <class name="com.nikita.trello.BoardCreationTests" />
+            <class name="com.nikita.trello.DeleteBoardTests" />
         </classes>
     </test>
 
