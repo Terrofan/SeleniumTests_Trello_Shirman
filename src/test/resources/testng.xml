@@ -8,6 +8,4 @@
             <class name="com.nikita.trello.DeleteBoardTests" />
         </classes>
     </test>
-
-
 </suite>

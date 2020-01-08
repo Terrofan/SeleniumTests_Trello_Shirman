@@ -29,7 +29,7 @@ public class DeleteBoardTests extends TestBase {
         Assert.assertEquals(nBoardsAfter, nBoardsBefore - 1);
     }
 
-    @Test // deletes all existing boards
+    @Test (enabled = false)// deletes all existing boards
     public void deleteAllBoardsTest() throws Exception {
         if (getBoardsCount() <= 1) {
             throw new Exception("No existing boards were found");
