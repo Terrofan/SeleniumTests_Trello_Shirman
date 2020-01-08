@@ -17,31 +17,17 @@ public class TeamCreationTest extends TestBase{
 
     @Test
     public void teamCreationTestFromHeader() throws InterruptedException {
+        int teamCountBefore =  getTeamsCount();
         clickOnPlusButton();
         selectCreateTeamFromDropDown();
         fillTeamCreationForm("teamName", "teamDesc");
         submitTeamCreation();
-        if(isElementPresent(By.cssSelector("[name='close']"))) {
-            closeInviteToTheTeamForm();
-        }
-        Assert.assertTrue(isElementPresent(By.cssSelector("[data-test-id='home-team-tab-name']")));
+//        if(isElementPresent(By.cssSelector("[name='close']"))) {
+//            closeInviteToTheTeamForm();
+//        }
+        clickLaterButton();
+        int teamCountAfter = getTeamsCount();
+        Assert.assertEquals(teamCountAfter, teamCountBefore + 1);
     }
 
-    public void submitTeamCreation() {
-        click(By.cssSelector("[data-test-id='header-create-team-submit-button']"));
-    }
-
-    private void closeInviteToTheTeamForm() {
-        click(By.cssSelector("[name='close']"));
-    }
-
-    private void fillTeamCreationForm(String teamName, String teamDesc) throws InterruptedException {
-        type(By.cssSelector("[data-test-id='header-create-team-name-input']"),teamName);
-        type(By.cssSelector("[id$='description']"), teamDesc);
-    }
-
-    private void selectCreateTeamFromDropDown() {
-        click(By.cssSelector("[data-test-id = 'header-create-team-button']"));
-
-    }
 }

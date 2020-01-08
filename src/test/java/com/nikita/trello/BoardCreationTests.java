@@ -24,7 +24,7 @@ public class BoardCreationTests extends TestBase {
         fillBoardForm(boardName);
         confirmCreation();
         pause(5000);
-        Assert.assertEquals(wd.findElement(By.xpath("//div/span[@dir='auto']")).getText(),boardName);
+        Assert.assertEquals(ApplicationManager.wd.findElement(By.xpath("//div/span[@dir='auto']")).getText(),boardName);
         returnToHomePage();
         int actualResult = getBoardsCount();
         Assert.assertEquals(actualResult,before + 1);
@@ -40,7 +40,7 @@ public class BoardCreationTests extends TestBase {
         selectPublicBoardType();
         confirmCreation();
         pause(5000);
-        Assert.assertEquals(wd.findElement(By.xpath("//div/span[@dir='auto']")).getText(),boardName);
+        Assert.assertEquals(ApplicationManager.wd.findElement(By.xpath("//div/span[@dir='auto']")).getText(),boardName);
         returnToHomePage();
         int actualResult = getBoardsCount();
         Assert.assertEquals(actualResult,before + 1);
