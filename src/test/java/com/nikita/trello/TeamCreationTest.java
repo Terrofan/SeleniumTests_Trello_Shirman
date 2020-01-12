@@ -26,6 +26,7 @@ public class TeamCreationTest extends TestBase{
 //            closeInviteToTheTeamForm();
 //        }
         clickLaterButton();
+        returnToHomePage();
         int teamCountAfter = getTeamsCount();
         Assert.assertEquals(teamCountAfter, teamCountBefore + 1);
     }
