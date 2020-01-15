@@ -3,7 +3,7 @@
 <suite name="Teams" verbose="1" >
     <test name="Team" >
         <classes>
-            <class name="com.nikita.trello.TeamCreationTest" />
+            <class name="com.nikita.trello.tests.TeamCreationTest" />
         </classes>
     </test>
 </suite>
