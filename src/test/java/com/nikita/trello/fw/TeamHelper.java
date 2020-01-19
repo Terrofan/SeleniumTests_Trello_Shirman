@@ -1,5 +1,6 @@
 package com.nikita.trello.fw;
 
+import com.nikita.trello.models.TeamData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,9 +34,9 @@ public class TeamHelper extends Helperbase{
         click(By.cssSelector("[name='close']"));
     }
 
-    public void fillTeamCreationForm(String teamName, String teamDesc) throws InterruptedException {
-        type(By.cssSelector("[data-test-id='header-create-team-name-input']"), teamName);
-        type(By.cssSelector("[id$='description']"), teamDesc);
+    public void fillTeamCreationForm(TeamData teamData) throws InterruptedException {
+        type(By.cssSelector("[data-test-id='header-create-team-name-input']"), teamData.getTeamName());
+        type(By.cssSelector("[id$='description']"), teamData.getTeamDesc());
     }
 
     public void selectCreateTeamFromDropDown() {

@@ -1,5 +1,6 @@
 package com.nikita.trello.tests;
 
+import com.nikita.trello.models.BoardData;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -21,7 +22,7 @@ public class BoardCreationTests extends TestBase {
         int before = appMan.getBoardHelper().getBoardsCount();
         appMan.getBoardHelper().clickOnPlusButton();
         appMan.getBoardHelper().selectCreateBoardFromDropDown();
-        appMan.getBoardHelper().fillBoardForm(boardName);
+        appMan.getBoardHelper().fillBoardForm(new BoardData(boardName));
         appMan.getBoardHelper().selectNoTeamType();
         appMan.getBoardHelper().confirmCreation();
         appMan.getHelperbase().pause(5000);
@@ -37,7 +38,7 @@ public class BoardCreationTests extends TestBase {
         int before = appMan.getBoardHelper().getBoardsCount();
         appMan.getBoardHelper().clickOnPlusButton();
         appMan.getBoardHelper().selectCreateBoardFromDropDown();
-        appMan.getBoardHelper().fillBoardForm(boardName);
+        appMan.getBoardHelper().fillBoardForm(new BoardData(boardName));
         appMan.getBoardHelper().selectPublicBoardType();
         appMan.getBoardHelper().confirmCreation();
         appMan.getHelperbase().pause(5000);

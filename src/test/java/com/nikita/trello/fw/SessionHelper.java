@@ -2,6 +2,8 @@ package com.nikita.trello.fw;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class SessionHelper extends Helperbase{
     public SessionHelper(WebDriver wd) {
@@ -12,6 +14,8 @@ public class SessionHelper extends Helperbase{
         type(By.id("user"), email);
         click(By.id("login"));
         click(By.id("login-submit"));
+        WebElement passwordField = wd.findElement(By.id("password"));
+        wait.until(ExpectedConditions.visibilityOf(passwordField));
         type(By.id("password"), password);
         click(By.id("login-submit"));
     }

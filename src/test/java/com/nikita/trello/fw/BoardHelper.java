@@ -1,9 +1,9 @@
 package com.nikita.trello.fw;
 
+import com.nikita.trello.models.BoardData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 import java.util.List;
 
@@ -16,8 +16,8 @@ public class BoardHelper extends Helperbase{
         click(By.cssSelector("[data-test-id='create-board-submit-button']"));
     }
 
-    public void fillBoardForm(String boardName) throws InterruptedException {
-        type(By.cssSelector("[data-test-id='create-board-title-input']"), boardName);
+    public void fillBoardForm(BoardData boardData) throws InterruptedException {
+        type(By.cssSelector("[data-test-id='create-board-title-input']"), boardData.getBoardName());
     }
 
     public void selectCreateBoardFromDropDown() {
