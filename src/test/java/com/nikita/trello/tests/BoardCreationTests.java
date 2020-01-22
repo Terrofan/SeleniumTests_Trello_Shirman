@@ -26,20 +26,7 @@ public class BoardCreationTests extends TestBase {
         }
     }
 
-    @DataProvider
-    public Iterator<Object[]> validBoardsCSV() throws IOException {
-        List<Object[]> list = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/boardsPositiveCSV.csv")));
-        String line = reader.readLine();
-        while(line != null){
-            String[] split = line.split(",");
-            list.add(new Object[]{new BoardData().setBoardName(split[0])});
-            line = reader.readLine();
-        }
-        return list.iterator();
-    }
-
-    @Test (dataProvider = "validBoardsCSV")
+    @Test (dataProvider = "validBoardsCSV", dataProviderClass = DataProviders.class)
     public void createPrivateBoardTestCSV(BoardData board) throws InterruptedException {
         int before = appMan.getBoardHelper().getBoardsCount();
         appMan.getBoardHelper().clickOnPlusButton();

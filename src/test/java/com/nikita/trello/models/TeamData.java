@@ -21,4 +21,12 @@ public class TeamData {
     public String getTeamDesc() {
         return teamDesc;
     }
+
+    @Override
+    public String toString() {
+        return "TeamData{" +
+                "teamName='" + teamName + '\'' +
+                ", teamDesc='" + teamDesc + '\'' +
+                '}';
+    }
 }

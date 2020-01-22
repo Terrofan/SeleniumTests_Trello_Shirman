@@ -11,27 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class TeamCreationTest extends TestBase{
-    @DataProvider
-    public Iterator<Object[]> validTeams(){
-        List<Object[]> list = new ArrayList<>();
-        list.add(new Object[]{"name DP","description"});
-        list.add(new Object[]{"DPn",""});
 
-        return list.iterator();
-    }
-
-    @DataProvider
-    public Iterator<Object[]> validTeamsCSV() throws IOException {
-        List<Object[]> list = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/teamsPositiveCsv.csv")));
-        String line = reader.readLine();
-        while(line != null){
-            String[] split = line.split(",");
-            list.add(new Object[]{new TeamData().setTeamName(split[0]).setTeamDesc(split[1])});
-            line = reader.readLine();
-        }
-        return list.iterator();
-    }
 
     @BeforeMethod
     public void ensurePreconditions() throws InterruptedException {
@@ -42,7 +22,7 @@ public class TeamCreationTest extends TestBase{
         }
     }
 
-    @Test(dataProvider = "validTeams")
+    @Test(dataProvider = "validTeams", dataProviderClass = DataProviders.class)
     public void teamCreationTestFromHeaderWithDP(String teamName, String teamDesc) throws InterruptedException {
         int teamCountBefore =  appMan.getTeamHelper().getTeamsCount();
         appMan.getBoardHelper().clickOnPlusButton();
@@ -55,7 +35,7 @@ public class TeamCreationTest extends TestBase{
         Assert.assertEquals(teamCountAfter, teamCountBefore + 1);
     }
 
-    @Test(dataProvider = "validTeamsCSV")
+    @Test(dataProvider = "validTeamsCSV", dataProviderClass = DataProviders.class)
     public void teamCreationTestFromHeaderWithDPCSV(TeamData team) throws InterruptedException {
         int teamCountBefore =  appMan.getTeamHelper().getTeamsCount();
         appMan.getBoardHelper().clickOnPlusButton();

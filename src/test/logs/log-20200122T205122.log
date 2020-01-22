@@ -1,0 +1,2 @@
+2020-01-22 20:51:30,300 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:20] Start test : testLogInAtlassian
+2020-01-22 20:52:25,465 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:25] Stop test : testLogInAtlassian
