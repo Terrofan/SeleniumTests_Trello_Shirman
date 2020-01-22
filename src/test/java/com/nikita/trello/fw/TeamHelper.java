@@ -14,7 +14,7 @@ public class TeamHelper extends Helperbase{
 
     public void clickLaterButton() throws InterruptedException {
         click(By.cssSelector("[data-test-id='show-later-button']"));
-        pause(1000);
+        pause(2000);
     }
 
     public int getTeamsCount() {

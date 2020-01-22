@@ -1,11 +1,11 @@
 package com.nikita.trello.models;
 
 public class BoardData {
-    private final String boardName;
-    String team;
+    private String boardName;
 
-    public BoardData(String boardName) {
+    public BoardData setBoardName(String boardName) {
         this.boardName = boardName;
+        return this;
     }
 
     public String getBoardName() {

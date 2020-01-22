@@ -53,7 +53,6 @@ public class TeamCreationTest extends TestBase{
         appMan.getSessionHelper().returnToHomePage();
         int teamCountAfter = appMan.getTeamHelper().getTeamsCount();
         Assert.assertEquals(teamCountAfter, teamCountBefore + 1);
-        appMan.getSessionHelper().returnToHomePage();
     }
 
     @Test(dataProvider = "validTeamsCSV")
@@ -68,7 +67,6 @@ public class TeamCreationTest extends TestBase{
         appMan.getSessionHelper().returnToHomePage();
         int teamCountAfter = appMan.getTeamHelper().getTeamsCount();
         Assert.assertEquals(teamCountAfter, teamCountBefore + 1);
-        appMan.getSessionHelper().returnToHomePage();
     }
 
     @Test
