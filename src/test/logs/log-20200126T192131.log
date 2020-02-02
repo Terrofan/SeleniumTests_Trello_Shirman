@@ -1,0 +1,3 @@
+2020-01-26 19:21:46,800 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:21] Start test : testLogInAtlassian with parameters []
+2020-01-26 19:22:52,807 INFO [Test worker] c.n.t.u.Listener [Listener.java:23] testLogInAtlassian Passed successful
+2020-01-26 19:22:52,811 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:26] Stop test : testLogInAtlassian

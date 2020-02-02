@@ -8,7 +8,7 @@ import org.openqa.selenium.remote.BrowserType;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
-    WebDriver wd;
+    public WebDriver wd;
     BoardHelper boardHelper;
     TeamHelper teamHelper;
     HeaderHelper headerHelper;

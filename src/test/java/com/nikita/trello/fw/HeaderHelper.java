@@ -16,4 +16,8 @@ public class HeaderHelper extends Helperbase {
     public void clickOnPlusButton() {
         click(By.xpath("//span[@name='add']"));
     }
+
+    public void clickOnAvatar() {
+        click(By.cssSelector("[data-test-id='header-member-menu-button']"));
+    }
 }

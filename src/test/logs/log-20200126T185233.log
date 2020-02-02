@@ -1,0 +1,4 @@
+2020-01-26 18:52:50,614 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:21] Start test : testLogInAtlassian with parameters []
+2020-01-26 18:53:53,402 ERROR [Test worker] c.n.t.u.Listener [Listener.java:18] testLogInAtlassian failed
+java.lang.AssertionError: did not expect to find [true] but found [false]
+2020-01-26 18:53:53,405 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:26] Stop test : testLogInAtlassian

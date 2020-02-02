@@ -1,7 +1,11 @@
 package com.nikita.trello.tests;
+import com.nikita.trello.utils.Listener;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+@Listeners(Listener.class)
 
 
 public class LoginTest extends TestBase {
@@ -17,7 +21,7 @@ public class LoginTest extends TestBase {
         // Atlassian login
         appMan.getSessionHelper().clickLoginLink();
         appMan.getSessionHelper().fillLoginFormAtlassian("nikitashirman@gmail.com", "5457den5457");
-        appMan.getHelperbase().pause(7000);
+        appMan.getHelperbase().pause(10000);
         Assert.assertTrue(appMan.getSessionHelper().isAvatarPresentOnHeader());
     }
 
