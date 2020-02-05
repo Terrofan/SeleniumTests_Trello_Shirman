@@ -24,6 +24,7 @@ public class ChangeAvatarTest extends TestBase{
         appMan.getSessionHelper().addAvatarImage();
         logger.info("avatar after:");
         Listener.takeScreenshot();
+        
 
     }
 
