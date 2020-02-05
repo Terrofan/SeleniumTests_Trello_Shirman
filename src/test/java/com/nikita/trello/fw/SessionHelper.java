@@ -49,9 +49,10 @@ public class SessionHelper extends Helperbase{
         click(By.xpath("//*[@data-test-id='header-member-menu-profile']"));
     }
 
-    public void goToAtlassianAccount() {
+    public void goToAtlassianAccount() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[href $=manage-profile]")));
         click(By.cssSelector("[href $=manage-profile]"));
+        pause(5000);
         ArrayList<String> availableTabs = new ArrayList<> (wd.getWindowHandles());
         if(!availableTabs.isEmpty()){
             wd.switchTo().window(availableTabs.get(1));

@@ -1,0 +1,12 @@
+2020-02-05 12:01:18,365 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:21] Start test : testLogInAtlassian with parameters []
+2020-02-05 12:02:03,469 INFO [Test worker] c.n.t.u.Listener [Listener.java:22] testLogInAtlassian Passed successful
+2020-02-05 12:02:03,470 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:26] Stop test : testLogInAtlassian
+2020-02-05 12:02:03,474 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:21] Start test : createPrivateBoardTest with parameters []
+2020-02-05 12:02:15,984 INFO [Test worker] c.n.t.u.Listener [Listener.java:22] createPrivateBoardTest Passed successful
+2020-02-05 12:02:15,986 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:26] Stop test : createPrivateBoardTest
+2020-02-05 12:02:15,988 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:21] Start test : createPublicBoardTest with parameters []
+2020-02-05 12:02:29,427 INFO [Test worker] c.n.t.u.Listener [Listener.java:22] createPublicBoardTest Passed successful
+2020-02-05 12:02:29,429 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:26] Stop test : createPublicBoardTest
+2020-02-05 12:02:29,431 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:21] Start test : deleteBoardTest with parameters []
+2020-02-05 12:02:50,448 INFO [Test worker] c.n.t.u.Listener [Listener.java:22] deleteBoardTest Passed successful
+2020-02-05 12:02:50,450 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:26] Stop test : deleteBoardTest

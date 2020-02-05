@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.nikita.trello.tests.LoginTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-02-05T10:01:33" hostname="DESKTOP-HJPIJTH" time="30.085">
+  <properties/>
+  <testcase name="testLogInAtlassian" classname="com.nikita.trello.tests.LoginTest" time="30.085"/>
+  <system-out><![CDATA[12:01:18.365 [Test worker] INFO  com.nikita.trello.tests.TestBase - Start test : testLogInAtlassian with parameters []
+12:02:03.469 [Test worker] INFO  com.nikita.trello.utils.Listener - testLogInAtlassian Passed successful
+12:02:03.470 [Test worker] INFO  com.nikita.trello.tests.TestBase - Stop test : testLogInAtlassian
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

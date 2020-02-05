@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.nikita.trello.tests.BoardCreationTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-02-05T10:02:03" hostname="DESKTOP-HJPIJTH" time="25.942">
+  <properties/>
+  <testcase name="createPrivateBoardTest" classname="com.nikita.trello.tests.BoardCreationTests" time="12.499"/>
+  <testcase name="createPublicBoardTest" classname="com.nikita.trello.tests.BoardCreationTests" time="13.427"/>
+  <system-out><![CDATA[12:02:03.474 [Test worker] INFO  com.nikita.trello.tests.TestBase - Start test : createPrivateBoardTest with parameters []
+12:02:15.984 [Test worker] INFO  com.nikita.trello.utils.Listener - createPrivateBoardTest Passed successful
+12:02:15.986 [Test worker] INFO  com.nikita.trello.tests.TestBase - Stop test : createPrivateBoardTest
+12:02:15.988 [Test worker] INFO  com.nikita.trello.tests.TestBase - Start test : createPublicBoardTest with parameters []
+12:02:29.427 [Test worker] INFO  com.nikita.trello.utils.Listener - createPublicBoardTest Passed successful
+12:02:29.429 [Test worker] INFO  com.nikita.trello.tests.TestBase - Stop test : createPublicBoardTest
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

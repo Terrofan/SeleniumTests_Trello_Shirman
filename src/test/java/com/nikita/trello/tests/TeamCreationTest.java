@@ -35,7 +35,7 @@ public class TeamCreationTest extends TestBase{
         Assert.assertEquals(teamCountAfter, teamCountBefore + 1);
     }
 
-    @Test(dataProvider = "validTeamsCSV", dataProviderClass = DataProviders.class)
+    @Test(enabled = false, dataProvider = "validTeamsCSV", dataProviderClass = DataProviders.class)
     public void teamCreationTestFromHeaderWithDPCSV(TeamData team) throws InterruptedException {
         int teamCountBefore =  appMan.getTeamHelper().getTeamsCount();
         appMan.getBoardHelper().clickOnPlusButton();

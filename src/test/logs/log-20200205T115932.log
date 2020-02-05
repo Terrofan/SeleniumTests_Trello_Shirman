@@ -1,0 +1,2 @@
+2020-02-05 11:59:45,796 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:21] Start test : createPrivateBoardTest with parameters []
+2020-02-05 12:00:43,137 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:26] Stop test : createPrivateBoardTest

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.nikita.trello.tests.DeleteBoardTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-02-05T10:02:29" hostname="DESKTOP-HJPIJTH" time="21.002">
+  <properties/>
+  <testcase name="deleteBoardTest" classname="com.nikita.trello.tests.DeleteBoardTests" time="21.002"/>
+  <system-out><![CDATA[12:02:29.431 [Test worker] INFO  com.nikita.trello.tests.TestBase - Start test : deleteBoardTest with parameters []
+12:02:50.448 [Test worker] INFO  com.nikita.trello.utils.Listener - deleteBoardTest Passed successful
+12:02:50.450 [Test worker] INFO  com.nikita.trello.tests.TestBase - Stop test : deleteBoardTest
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

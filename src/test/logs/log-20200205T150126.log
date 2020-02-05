@@ -1,0 +1,4 @@
+2020-02-05 15:01:39,354 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:21] Start test : teamCreationTestFromHeaderWithDP with parameters [name DP, description]
+2020-02-05 15:02:40,739 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:26] Stop test : teamCreationTestFromHeaderWithDP
+2020-02-05 15:02:40,741 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:21] Start test : teamCreationTestFromHeaderWithDP with parameters [DPn, ]
+2020-02-05 15:02:56,554 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:26] Stop test : teamCreationTestFromHeaderWithDP
