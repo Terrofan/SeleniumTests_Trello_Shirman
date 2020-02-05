@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -43,11 +44,13 @@ public class SessionHelper extends Helperbase{
         click(By.cssSelector("[data-test-id='header-member-menu-logout']"));
     }
 
-    public void openUserProfileFromDropDown() {
-        click(By.cssSelector("[data-test-id='header-member-menu-profile']"));
+    public void openUserProfileFromDropDown() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@data-test-id='header-member-menu-profile']")));
+        click(By.xpath("//*[@data-test-id='header-member-menu-profile']"));
     }
 
     public void goToAtlassianAccount() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[href $=manage-profile]")));
         click(By.cssSelector("[href $=manage-profile]"));
         ArrayList<String> availableTabs = new ArrayList<> (wd.getWindowHandles());
         if(!availableTabs.isEmpty()){
@@ -64,8 +67,8 @@ public class SessionHelper extends Helperbase{
             if (isElementPresent(By.cssSelector("[role=menu]"))) {
                 click(By.xpath("//*[@role='menu']//span[@role='menuitem'][1]"));
             }
-            attach(By.id("image-input"), new File("C:/Users/Elena/Documents/GitHub/trello-selenium-tests-Rochman/src/test/resources/2014-03-22 10.57.26.jpg"));
-            click(By.xpath("//*[contains(text(),'Upload')]"));
+            attach(By.id("image-input"), new File("C:/Users/sh_ni/Documents/GitHub/SeleniumTests_Trello_Shirman/src/test/resources/5dcc613f1f00009304dee539.jpeg"));
+            click(By.xpath("//footer/div/button[@type='button'][1]"));
             pause(5000);
             wd.close();
             pause(3000);

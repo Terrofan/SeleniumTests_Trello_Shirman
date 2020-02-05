@@ -26,7 +26,7 @@ public class BoardCreationTests extends TestBase {
         }
     }
 
-    @Test (dataProvider = "validBoardsCSV", dataProviderClass = DataProviders.class)
+    @Test (enabled = false, dataProvider = "validBoardsCSV", dataProviderClass = DataProviders.class)
     public void createPrivateBoardTestCSV(BoardData board) throws InterruptedException {
         int before = appMan.getBoardHelper().getBoardsCount();
         appMan.getBoardHelper().clickOnPlusButton();

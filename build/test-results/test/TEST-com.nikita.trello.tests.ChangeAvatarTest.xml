@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.nikita.trello.tests.ChangeAvatarTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-02-03T10:19:09" hostname="DESKTOP-HJPIJTH" time="58.106">
+  <properties/>
+  <testcase name="testChangeAvatar" classname="com.nikita.trello.tests.ChangeAvatarTest" time="58.106"/>
+  <system-out><![CDATA[12:18:32.888 [Test worker] INFO  com.nikita.trello.tests.TestBase - Start test : testChangeAvatar with parameters []
+12:19:09.994 [Test worker] INFO  com.nikita.trello.tests.TestBase - avatar before
+12:19:10.404 [Test worker] INFO  com.nikita.trello.utils.Listener - 
+Created screenshot : C:\Users\sh_ni\Documents\GitHub\SeleniumTests_Trello_Shirman\src\test\screenshots\screen-1580725150398.png
+12:20:07.729 [Test worker] INFO  com.nikita.trello.tests.TestBase - avatar after:
+12:20:08.096 [Test worker] INFO  com.nikita.trello.utils.Listener - 
+Created screenshot : C:\Users\sh_ni\Documents\GitHub\SeleniumTests_Trello_Shirman\src\test\screenshots\screen-1580725208095.png
+12:20:08.099 [Test worker] INFO  com.nikita.trello.tests.TestBase - Stop test : testChangeAvatar
+]]></system-out>
+  <system-err><![CDATA[[1580725162.062][WARNING]: Timed out connecting to Chrome, retrying...
+]]></system-err>
+</testsuite>

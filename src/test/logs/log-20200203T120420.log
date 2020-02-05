@@ -1,0 +1,5 @@
+2020-02-03 12:04:34,010 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:21] Start test : testChangeAvatar with parameters []
+2020-02-03 12:05:11,175 INFO [Test worker] c.n.t.t.TestBase [ChangeAvatarTest.java:19] avatar before
+2020-02-03 12:05:19,197 INFO [Test worker] c.n.t.u.Listener [Listener.java:44] 
+Created screenshot : C:\Users\sh_ni\Documents\GitHub\SeleniumTests_Trello_Shirman\src\test\screenshots\screen-1580724319191.png
+2020-02-03 12:06:20,298 INFO [Test worker] c.n.t.t.TestBase [TestBase.java:26] Stop test : testChangeAvatar

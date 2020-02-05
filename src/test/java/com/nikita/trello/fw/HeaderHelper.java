@@ -2,6 +2,7 @@ package com.nikita.trello.fw;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HeaderHelper extends Helperbase {
     public HeaderHelper(WebDriver wd) {
@@ -17,7 +18,8 @@ public class HeaderHelper extends Helperbase {
         click(By.xpath("//span[@name='add']"));
     }
 
-    public void clickOnAvatar() {
+    public void clickOnAvatar() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[data-test-id='header-member-menu-button']")));
         click(By.cssSelector("[data-test-id='header-member-menu-button']"));
     }
 }
